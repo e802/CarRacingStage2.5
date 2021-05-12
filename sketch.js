@@ -39,7 +39,7 @@ function setup() {
     heading.style('color', 'orange');
     canvas.remove();
     btnGet.remove();
-    var rankingTable = document.querySelector('#table');
+   
 
     var players = [];
 
@@ -59,11 +59,9 @@ function setup() {
     players.sort(function (a, b) {
       if (a.rank < b.rank) return -1;
       if (a.rank > b.rank) return 1;
-      if (a.rank < b.rank) return -1;
-      if (a.rank > b.rank) return 1;
       return 0;
     });
-
+    var rankingTableSection = document.querySelector('#tableSection');
     var headers = ['Name', 'Rank'];
     var table = document.createElement('table');
     var headerRow = document.createElement('tr');
@@ -90,7 +88,7 @@ function setup() {
       table.appendChild(row);
     });
 
-    rankingTable.appendChild(table);
+    rankingTableSection.appendChild(table);
   });
 
 }
